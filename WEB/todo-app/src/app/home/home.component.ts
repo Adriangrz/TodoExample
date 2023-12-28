@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterLink } from '@angular/router';
 
 import { TodoService } from '../services/todo.service';
 
@@ -20,6 +21,7 @@ import { Todo } from '../types';
     MatIconModule,
     MatListModule,
     MatProgressSpinnerModule,
+    RouterLink,
   ],
   providers: [TodoService],
   templateUrl: './home.component.html',
