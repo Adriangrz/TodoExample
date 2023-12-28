@@ -1,6 +1,9 @@
 ﻿using TodoExample.Middleware;
+using TodoExample.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigureServices.AddInfrastructureServices(builder.Services);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

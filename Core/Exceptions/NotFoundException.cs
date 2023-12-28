@@ -8,7 +8,7 @@ namespace Core.Exceptions
 {
     public class NotFoundException: Exception
     {
-        public NotFoundException(string id): base($"Not found element with id {id}")
+        public NotFoundException(Guid id): base($"Not found element with id {id}")
         {
             
         }

@@ -10,7 +10,7 @@ namespace TodoExample.Infrastructure
 {
 	public static class ConfigureServices
 	{
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+        public static void AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -20,8 +20,6 @@ namespace TodoExample.Infrastructure
 
  
             services.AddScoped<IRepository<Todo>, TodoRepository>();
-
-            return services;
         }
     }
 }

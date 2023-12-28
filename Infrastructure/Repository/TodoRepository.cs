@@ -18,7 +18,7 @@ namespace Infrastructure.Repository
 
         public Todo Add(Todo entity) => _context.Todos.Add(entity).Entity;
 
-        public async Task Delete(string id)
+        public async Task Delete(Guid id)
         {
             Todo todo = await _context.Todos.FindAsync(id) ?? throw new NotFoundException(id);
             
@@ -28,7 +28,7 @@ namespace Infrastructure.Repository
         public void Edit(Todo entity) => _context.Entry(entity).State = EntityState.Modified;
         
 
-        public async Task<Todo> GetById (string id) => await _context.Todos.FindAsync(id) ?? throw new NotFoundException(id);
+        public async Task<Todo> GetById (Guid id) => await _context.Todos.FindAsync(id) ?? throw new NotFoundException(id);
 
         public async Task<IEnumerable<Todo>> List() => await _context.Todos.ToListAsync();
 
