@@ -72,6 +72,8 @@ namespace TodoExample.Controllers
         {
             await _repository.Delete(id);
 
+            await _repository.Save();
+
             return Ok();
         }
 
