@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 
 using Infrastructure.Persistence;
+using Core.Interfaces;
+using Infrastructure.Repository;
+using Core.Entities;
 
 namespace TodoExample.Infrastructure
 {
@@ -16,8 +19,7 @@ namespace TodoExample.Infrastructure
             });
 
  
-           // services.AddScoped<IAuthorizationHandler, ResourceOperationRequirementHandler>();
-
+            services.AddScoped<IRepository<Todo>, TodoRepository>();
 
             return services;
         }
