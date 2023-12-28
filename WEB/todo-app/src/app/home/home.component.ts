@@ -5,6 +5,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterLink } from '@angular/router';
 
 import { TodoService } from '../services/todo.service';
@@ -29,10 +30,12 @@ import { Todo } from '../types';
 })
 export class HomeComponent {
   todos: Todo[] = [];
-  isError: boolean = false;
   isLoading: boolean = false;
 
-  constructor(private todoService: TodoService) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private todoService: TodoService,
+  ) {}
 
   ngOnInit(): void {
     this.getTodos();
@@ -46,8 +49,8 @@ export class HomeComponent {
         this.isLoading = false;
       },
       error: () => {
-        this.isError = true;
         this.isLoading = false;
+        this.snackBar.open('Something went wrong', 'close');
       },
     });
   }
@@ -59,8 +62,8 @@ export class HomeComponent {
         this.getTodos();
       },
       error: () => {
-        this.isError = true;
         this.isLoading = false;
+        this.snackBar.open('Something went wrong', 'close');
       },
     });
   }
@@ -76,8 +79,8 @@ export class HomeComponent {
         this.isLoading = false;
       },
       error: () => {
-        this.isError = true;
         this.isLoading = false;
+        this.snackBar.open('Something went wrong', 'close');
       },
     });
   }

@@ -13,6 +13,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { TodoService } from '../services/todo.service';
 
@@ -44,7 +45,6 @@ export class CustomErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: './add-todo.component.scss',
 })
 export class AddTodoComponent {
-  isError: boolean = false;
   isLoading: boolean = false;
 
   todoForm = this.formBuilder.group({
@@ -60,6 +60,7 @@ export class AddTodoComponent {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private snackBar: MatSnackBar,
     private todoService: TodoService,
   ) {}
 
@@ -71,8 +72,8 @@ export class AddTodoComponent {
         this.router.navigate(['/']);
       },
       error: () => {
-        this.isError = true;
         this.isLoading = false;
+        this.snackBar.open('Something went wrong', 'close');
       },
     });
   }
