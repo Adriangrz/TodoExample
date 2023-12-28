@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using TodoExample.Core.Entities;
+using Core.Entities;
 
-namespace TodoExample.Infrastructure.Persistence
+namespace Infrastructure.Persistence
 {
 	public class ApplicationDbContext: DbContext
 	{

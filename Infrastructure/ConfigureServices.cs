@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
-using TodoExample.Infrastructure.Persistence;
+using Infrastructure.Persistence;
 
 namespace TodoExample.Infrastructure
 {

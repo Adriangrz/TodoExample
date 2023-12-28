@@ -1,4 +1,4 @@
-﻿namespace TodoExample.Core.Entities
+﻿namespace Core.Entities
 {
 	public class Todo
 	{

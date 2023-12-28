@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoExample", "TodoExample\TodoExample.csproj", "{22461CCF-3099-4500-A792-8C4AAD5BFD42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoExample", "TodoExample\TodoExample.csproj", "{22461CCF-3099-4500-A792-8C4AAD5BFD42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{507BD1AC-32DA-40F6-83CD-077061C7EC77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D4079441-EB38-449C-BBC9-625D2E8EC414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoExample.Core", "TodoExample\TodoExample.Core\TodoExample.Core.csproj", "{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoExample.Infrastructure", "TodoExample\TodoExample.Infrastructure\TodoExample.Infrastructure.csproj", "{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{7AF288D9-A91C-40A4-92CB-D251B4C56C0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,25 +23,25 @@ Global
 		{22461CCF-3099-4500-A792-8C4AAD5BFD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22461CCF-3099-4500-A792-8C4AAD5BFD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22461CCF-3099-4500-A792-8C4AAD5BFD42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF288D9-A91C-40A4-92CB-D251B4C56C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF288D9-A91C-40A4-92CB-D251B4C56C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF288D9-A91C-40A4-92CB-D251B4C56C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF288D9-A91C-40A4-92CB-D251B4C56C0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22461CCF-3099-4500-A792-8C4AAD5BFD42} = {D4079441-EB38-449C-BBC9-625D2E8EC414}
+		{D4079441-EB38-449C-BBC9-625D2E8EC414} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
+		{45DB87EA-2F88-4C96-B0F0-F80D8D37FCA9} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
+		{7AF288D9-A91C-40A4-92CB-D251B4C56C0F} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED01F66A-0B66-4E51-903B-D73250D5F8E6}
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{D4079441-EB38-449C-BBC9-625D2E8EC414} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
-		{22461CCF-3099-4500-A792-8C4AAD5BFD42} = {D4079441-EB38-449C-BBC9-625D2E8EC414}
-		{6EFD2780-C5FC-4070-8CB2-99DFBC8CBA6B} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
-		{AEFC241E-E3F2-4830-ACF5-78E3B5C970B6} = {507BD1AC-32DA-40F6-83CD-077061C7EC77}
 	EndGlobalSection
 EndGlobal

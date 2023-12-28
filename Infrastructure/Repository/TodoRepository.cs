@@ -1,10 +1,9 @@
-﻿using System.Linq.Expressions;
+﻿using Core.Entities;
+using Core.Interfaces;
 
-using TodoExample.Core.Entities;
-using TodoExample.Core.Interfaces;
-using TodoExample.Infrastructure.Persistence;
+using Infrastructure.Persistence;
 
-namespace TodoExample.Infrastructure.Repository
+namespace Infrastructure.Repository
 {
     public class TodoRepository : IRepository<Todo>
 	{
@@ -15,10 +14,7 @@ namespace TodoExample.Infrastructure.Repository
             _context = context;
         }
 
-        public Todo Add(Todo entity)
-        {
-            return _context.Todos.Add(entity).Entity;
-        }
+        public Todo Add(Todo entity) => _context.Todos.Add(entity).Entity;
 
         public void Delete(Todo entity)
         {
