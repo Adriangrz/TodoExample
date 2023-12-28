@@ -1,7 +1,9 @@
 ﻿using Core.Entities;
+using Core.Exceptions;
 using Core.Interfaces;
 
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
@@ -16,25 +18,19 @@ namespace Infrastructure.Repository
 
         public Todo Add(Todo entity) => _context.Todos.Add(entity).Entity;
 
-        public void Delete(Todo entity)
+        public async Task Delete(string id)
         {
-            throw new NotImplementedException();
+            Todo todo = await _context.Todos.FindAsync(id) ?? throw new NotFoundException(id);
+            
+            _context.Todos.Remove(todo);
         }
 
-        public void Edit(Todo entity)
-        {
-            throw new NotImplementedException();
-        }
+        public void Edit(Todo entity) => _context.Entry(entity).State = EntityState.Modified;
+        
 
-        public Todo GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Todo> GetById (string id) => await _context.Todos.FindAsync(id) ?? throw new NotFoundException(id);
 
-        public IEnumerable<Todo> List()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Todo>> List() => await _context.Todos.ToListAsync();
 
         public async Task Save()
         {
